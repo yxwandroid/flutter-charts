@@ -11,16 +11,16 @@ import './draw_tree_rects.dart';
 class TreeMap extends StatefulWidget {
   final List<double> datas;
 
-  const TreeMap({@required this.datas});
+  const TreeMap({required this.datas});
 
   @override
   _TreeMapState createState() => _TreeMapState();
 }
 
 class _TreeMapState extends State<TreeMap> with SingleTickerProviderStateMixin {
-  AnimationController _controller;
-  Animation<double> _scale;
-  Animation<Color> _color;
+  late AnimationController _controller;
+  late Animation<double> _scale;
+  late Animation<Color?> _color;
 
   @override
   void initState() {
@@ -37,8 +37,7 @@ class _TreeMapState extends State<TreeMap> with SingleTickerProviderStateMixin {
     _scale = Tween(begin: 0.0, end: 1.0).animate(
       CurvedAnimation(parent: _controller, curve: Curves.easeInOut),
     );
-
-    _color = ColorTween(begin: Colors.orange, end: Colors.red).animate(
+     _color = ColorTween(begin: Colors.orange, end: Colors.red).animate(
       CurvedAnimation(parent: _controller, curve: Curves.easeInOut),
     );
 
@@ -65,12 +64,12 @@ class _TreeMapState extends State<TreeMap> with SingleTickerProviderStateMixin {
 class TreeMapPainter extends CustomPainter {
   final List<double> datas;
   final Animation<double> scale;
-  final Animation<Color> color;
+  final Animation<Color?> color;
 
   TreeMapPainter({
-    @required this.datas,
-    this.scale,
-    this.color,
+    required this.datas,
+    required this.scale,
+    required this.color,
   }) : super(repaint: scale);
 
   @override
@@ -84,7 +83,7 @@ class TreeMapPainter extends CustomPainter {
     canvas.drawRect(rootRect, paint);
 
     drawTreeRects(rootNode, rootRect, rootNode, 0, canvas,
-        scale: scale.value, color: color.value);
+        scale: scale.value, color: Colors.blue);
   }
 
   @override

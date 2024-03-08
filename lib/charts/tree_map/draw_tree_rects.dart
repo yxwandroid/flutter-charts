@@ -74,7 +74,7 @@ void drawTreeRects(TreeNode node, Rect rootRectLeft, TreeNode rootNodeLeft,
     top = rootRectLeft.top;
     left = rootRectLeft.left;
     width = rootRectLeft.width;
-    height = (node.left.value / rootNodeLeft.value) * rootRectLeft.height;
+    height = (node.left!.value / rootNodeLeft.value) * rootRectLeft.height;
 
     double scaleWidth = width * scale;
     double scaleHeight = height * scale;
@@ -91,7 +91,7 @@ void drawTreeRects(TreeNode node, Rect rootRectLeft, TreeNode rootNodeLeft,
     canvas.drawRect(rectLineLeft, linePaint);
 
     _drawText(
-      node.left.value,
+      node.left!.value,
       canvas,
       Offset(left + width / 2 - 12.0, top + height / 2 - 12.0),
     );
@@ -99,7 +99,7 @@ void drawTreeRects(TreeNode node, Rect rootRectLeft, TreeNode rootNodeLeft,
     left = rootRectLeft.left;
     top = rootRectLeft.top + height;
     width = rootRectLeft.width;
-    height = (node.right.value / rootNodeLeft.value) * rootRectLeft.height;
+    height = (node.right!.value / rootNodeLeft.value) * rootRectLeft.height;
 
     scaleWidth = width * scale;
     scaleHeight = height * scale;
@@ -116,7 +116,7 @@ void drawTreeRects(TreeNode node, Rect rootRectLeft, TreeNode rootNodeLeft,
     canvas.drawRect(rectLineRight, linePaint);
 
     _drawText(
-      node.right.value,
+      node.right!.value,
       canvas,
       Offset(left + width / 2 - 12.0, top + height / 2 - 12.0),
     );
@@ -128,7 +128,7 @@ void drawTreeRects(TreeNode node, Rect rootRectLeft, TreeNode rootNodeLeft,
 
     // left node
     left = rootRectLeft.left;
-    width = (node.left.value / rootNodeLeft.value) * rootRectLeft.width;
+    width = (node.left!.value / rootNodeLeft.value) * rootRectLeft.width;
 
     double scaleWidth = width * scale;
     double scaleHeight = height * scale;
@@ -145,7 +145,7 @@ void drawTreeRects(TreeNode node, Rect rootRectLeft, TreeNode rootNodeLeft,
     canvas.drawRect(rectLineLeft, linePaint);
 
     _drawText(
-      node.left.value,
+      node.left!.value,
       canvas,
       Offset(left + width / 2 - 12.0, top + height / 2 - 12.0),
     );
@@ -153,7 +153,7 @@ void drawTreeRects(TreeNode node, Rect rootRectLeft, TreeNode rootNodeLeft,
     top = rootRectLeft.top;
     height = rootRectLeft.height;
     left = rootRectLeft.left + width;
-    width = (node.right.value / rootNodeLeft.value) * rootRectLeft.width;
+    width = (node.right!.value / rootNodeLeft.value) * rootRectLeft.width;
 
     scaleWidth = width * scale;
     scaleHeight = height * scale;
@@ -170,7 +170,7 @@ void drawTreeRects(TreeNode node, Rect rootRectLeft, TreeNode rootNodeLeft,
     canvas.drawRect(rectLineRight, linePaint);
 
     _drawText(
-      node.right.value,
+      node.right!.value,
       canvas,
       Offset(left + width / 2 - 12.0, top + height / 2 - 12.0),
     );
@@ -179,9 +179,9 @@ void drawTreeRects(TreeNode node, Rect rootRectLeft, TreeNode rootNodeLeft,
   level++;
 
   // 递归绘制左节点
-  drawTreeRects(node.left, rectLeft, node.left, level, canvas,
+  drawTreeRects(node.left as TreeNode, rectLeft, node.left as TreeNode, level, canvas,
       scale: scale, color: color);
   // 递归绘制右节点
-  drawTreeRects(node.right, rectRight, node.right, level, canvas,
+  drawTreeRects(node.right as TreeNode, rectRight, node.right as TreeNode, level, canvas,
       scale: scale, color: color);
 }

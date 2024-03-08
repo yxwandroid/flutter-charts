@@ -10,8 +10,8 @@ class BarChart extends StatefulWidget {
   final List<Map<String, dynamic>> data;
 
   const BarChart({
-    @required this.data,
-    @required this.max,
+    required this.data,
+    required this.max,
   });
 
   @override
@@ -28,7 +28,7 @@ class _BarChartState extends State<BarChart> {
         child: CustomPaint(
           painter: BarChartPainter(
             data: widget.data,
-            max: widget.max,
+            max: widget.max, xAxis: [],
           ),
         ),
       ),
@@ -41,7 +41,7 @@ class BarChartPainter extends CustomPainter {
   final List<String> xAxis;
   final double max;
 
-  BarChartPainter({this.data, this.xAxis, this.max});
+  BarChartPainter({required this.data, required this.xAxis, required this.max});
 
   void _drawGrid(Canvas canvas, Size size) {
     final double sw = size.width;

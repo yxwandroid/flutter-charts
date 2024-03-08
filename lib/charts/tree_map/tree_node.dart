@@ -1,7 +1,7 @@
 class TreeNode {
   final double value;
-  TreeNode left;
-  TreeNode right;
+  TreeNode? left;
+  TreeNode? right;
 
   TreeNode(this.value);
 }
@@ -12,6 +12,6 @@ void dfs(TreeNode root) {
   }
 
   print(root.value);
-  dfs(root.left);
-  dfs(root.right);
+  // dfs(root.left);
+  // dfs(root.right);
 }

@@ -8,8 +8,8 @@ class LineChart extends StatefulWidget {
   final List<String> xAxis;
 
   const LineChart({
-    @required this.datas,
-    @required this.xAxis,
+    required this.datas,
+    required this.xAxis,
   });
 
   @override
@@ -18,7 +18,7 @@ class LineChart extends StatefulWidget {
 
 class _LineChartState extends State<LineChart>
     with SingleTickerProviderStateMixin {
-  AnimationController _controller;
+  late AnimationController _controller;
   final _animationPoints = <double>[];
 
   @override
@@ -97,10 +97,10 @@ class LineChartPainter extends CustomPainter {
   final Animation<double> animation;
 
   LineChartPainter({
-    @required this.datas,
-    @required this.xAxis,
-    @required this.points,
-    @required this.animation,
+    required this.datas,
+    required this.xAxis,
+    required this.points,
+    required this.animation,
   }) : super(repaint: animation);
 
   void _drawLines(Canvas canvas, Size size) {

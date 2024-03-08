@@ -9,7 +9,7 @@ class CalenderHeatMap extends StatelessWidget {
   final List<double> datas;
 
   const CalenderHeatMap({
-    @required this.datas,
+    required this.datas,
   });
 
   @override
@@ -29,7 +29,7 @@ class CalenderHeatMapPainter extends CustomPainter {
   final List<double> datas;
 
   CalenderHeatMapPainter({
-    @required this.datas,
+    required this.datas,
   });
 
   final double gap = 5.0;

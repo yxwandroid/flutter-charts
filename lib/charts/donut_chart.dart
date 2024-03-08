@@ -6,7 +6,7 @@ import 'package:flutter_charts/colors.dart';
 class DonutCahrt extends StatefulWidget {
   final List<Map<String, dynamic>> datas;
 
-  const DonutCahrt({this.datas});
+  const DonutCahrt({required this.datas});
 
   @override
   _DonutCahrtState createState() => _DonutCahrtState();

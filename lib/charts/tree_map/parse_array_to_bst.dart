@@ -7,7 +7,8 @@ import './tree_node.dart';
 TreeNode parseArrayToBST(List<double> array) {
   int n = array.length;
   double sum = 0.0;
-  List<double> sums = List(n + 1);
+  // List<double> sums = List(n + 1);
+  List<double> sums = List.filled(n + 1, 0.0);
   sums[0] = 0.0;
 
   for (int i = 0; i < n; i++) {

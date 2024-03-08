@@ -7,8 +7,8 @@ class ColumnChart extends StatefulWidget {
   final List<String> xAxis;
 
   const ColumnChart({
-    @required this.data,
-    @required this.xAxis,
+    required this.data,
+    required this.xAxis,
   });
 
   @override
@@ -17,7 +17,7 @@ class ColumnChart extends StatefulWidget {
 
 class _ColumnChartState extends State<ColumnChart>
     with TickerProviderStateMixin {
-  AnimationController _controller;
+  late AnimationController _controller;
   final _animations = <double>[];
 
   @override
@@ -98,9 +98,9 @@ class ColumnChartPainter extends CustomPainter {
   static double labelFontSize = 12.0;
 
   ColumnChartPainter({
-    @required this.xAxis,
-    @required this.datas,
-    this.animation,
+    required this.xAxis,
+    required this.datas,
+    required this.animation,
   }) : super(repaint: animation);
 
   void _drawAxis(Canvas canvas, Size size) {

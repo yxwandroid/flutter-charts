@@ -5,7 +5,7 @@ import '../../utils/draw_grid.dart';
 class AreaChart extends StatefulWidget {
   final List<double> datas;
 
-  const AreaChart({@required this.datas});
+  const AreaChart({required this.datas});
 
   @override
   _AreaChartState createState() => _AreaChartState();

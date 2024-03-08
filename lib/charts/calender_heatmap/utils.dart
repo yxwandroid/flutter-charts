@@ -12,7 +12,7 @@ leapYear(int year) {
 }
 
 daysInMonth(int year, int month) {
-  List<int> monthLength = List(12);
+  List<int> monthLength = [];
 
   monthLength[0] = 31;
   monthLength[2] = 31;

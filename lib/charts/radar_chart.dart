@@ -10,9 +10,9 @@ class RadarChart extends StatefulWidget {
   final List<List<double>> datas;
 
   const RadarChart({
-    @required this.datas,
-    @required this.scores,
-    @required this.features,
+    required this.datas,
+    required this.scores,
+    required this.features,
   });
 
   @override
@@ -20,7 +20,7 @@ class RadarChart extends StatefulWidget {
 }
 
 class _RadarChartState extends State<RadarChart> with TickerProviderStateMixin {
-  AnimationController _controller;
+  late AnimationController _controller;
 
   @override
   void initState() {
@@ -72,10 +72,10 @@ class RadarChartPainter extends CustomPainter {
   final Animation<double> animation;
 
   RadarChartPainter({
-    @required this.scores,
-    @required this.datas,
-    @required this.features,
-    @required this.animation,
+    required this.scores,
+    required this.datas,
+    required this.features,
+    required this.animation,
   }) : super(repaint: animation);
 
   void _drawOutline(Canvas canvas, Size size) {
@@ -103,7 +103,7 @@ class RadarChartPainter extends CustomPainter {
     const double scoreLabelFontSize = 10;
 
     Paint scoresPaint = Paint()
-      ..color = Colors.grey[500]
+      ..color = Colors.grey[500]!
       ..style = PaintingStyle.stroke
       ..strokeWidth = 1.0
       ..isAntiAlias = true;
@@ -130,11 +130,11 @@ class RadarChartPainter extends CustomPainter {
   }
 
   void _drawRotateText({
-    @required Canvas canvas,
-    @required Size size,
-    @required String text,
-    @required Offset offset,
-    @required double radius,
+    required Canvas canvas,
+    required Size size,
+    required String text,
+    required Offset offset,
+    required double radius,
     Color color = Colors.black,
     double fontSize = 12.0,
   }) {
@@ -178,7 +178,7 @@ class RadarChartPainter extends CustomPainter {
         );
 
         Paint linePaint = Paint()
-          ..color = Colors.grey[500]
+          ..color = Colors.grey[500]!
           ..style = PaintingStyle.stroke
           ..strokeWidth = 1.0
           ..isAntiAlias = true;

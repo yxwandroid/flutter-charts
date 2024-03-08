@@ -21,8 +21,8 @@ class PieChart extends StatefulWidget {
   final List<String> legends;
 
   const PieChart({
-    @required this.datas,
-    @required this.legends,
+    required this.datas,
+    required this.legends,
   });
 
   @override
@@ -31,7 +31,7 @@ class PieChart extends StatefulWidget {
 
 class _PieChartState extends State<PieChart> with TickerProviderStateMixin {
   double _total = 0.0;
-  AnimationController _controller;
+  late AnimationController _controller;
   List<double> _animateDatas = [];
   final List<PiePart> _parts = <PiePart>[];
 
@@ -141,10 +141,10 @@ class PeiChartPainter extends CustomPainter {
   final List<String> legends;
 
   PeiChartPainter({
-    @required this.total,
-    @required this.datas,
-    @required this.legends,
-    @required this.parts,
+    required this.total,
+    required this.datas,
+    required this.legends,
+    required this.parts,
   });
 
   void drawParts(Canvas canvas, Size size) {
